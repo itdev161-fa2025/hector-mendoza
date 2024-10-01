@@ -1,6 +1,7 @@
 import express from 'express';
 import connectDataBase from './config/db';
 import { check, validationResult } from 'express-validator';
+import cors from 'cors';
 
 //Initialize express application
 const app = express();
@@ -10,6 +11,7 @@ connectDataBase();
 
 //Configure Middleware
 app.use(express.json({ extended: false }));
+app.use(cors({ origin: 'https://localhost3000'}));
 
 //API endpoints
 /**
